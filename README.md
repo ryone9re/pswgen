@@ -16,6 +16,7 @@ go install
 pswgen [OPTIONS] [PASSWORD LENGTH]
 ```
 
+```bash
 OPTIONS:
     -h, --help:
         Show this help message and exit.
@@ -23,3 +24,4 @@ OPTIONS:
         Show version and exit.
     -s, --symbol:
         Add symbol to password.
+```
