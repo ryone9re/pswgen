@@ -1,6 +1,6 @@
 # pswgen
 
-A simple random password generator run on CLI
+A simple random password generator execute in CLI
 
 ## Installation
 
