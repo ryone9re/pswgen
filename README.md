@@ -16,10 +16,10 @@ go install
 pswgen [OPTIONS] [PASSWORD LENGTH]
 ```
 
-    OPTIONS:
-        -h, --help:
-            Show this help message and exit.
-        -v, --version:
-            Show version and exit.
-        -s, --symbol:
-            Add symbol to password.
+OPTIONS:
+    -h, --help:
+        Show this help message and exit.
+    -v, --version:
+        Show version and exit.
+    -s, --symbol:
+        Add symbol to password.
