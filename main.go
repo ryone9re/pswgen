@@ -25,7 +25,7 @@ func main() {
 	app.Action = func(c *cli.Context) error {
 		i, err := strconv.ParseUint(c.Args()[0], 10, 64)
 		if err != nil {
-			log.Fatalln("Arguments is not a number")
+			log.Fatalln("Invalid arguments")
 		}
 		random, _ := MakeRandomStr(i, c.Bool("symbol"))
 		fmt.Println(random)
