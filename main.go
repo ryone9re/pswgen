@@ -23,9 +23,14 @@ func main() {
 		},
 	}
 	app.Action = func(c *cli.Context) error {
+		if c.Args() == nil || len(c.Args()) == 0 {
+			log.SetFlags(0)
+			log.Fatal("\npswgen [OPTIONS] [PASSWORD LENGTH]\n\nOPTIONS:\n  -h, --help:\n	Show this help message and exit.\n  -v, --version:\n	Show version and exit.\n  -s, --symbol:\n	Add symbol to password.")
+		}
 		i, err := strconv.ParseUint(c.Args()[0], 10, 64)
-		if err != nil {
-			log.Fatalln("Invalid arguments")
+		if err != nil || i < 1 {
+			log.SetFlags(0)
+			log.Fatal("\npswgen [OPTIONS] [PASSWORD LENGTH]\n\nOPTIONS:\n  -h, --help:\n	Show this help message and exit.\n  -v, --version:\n	Show version and exit.\n  -s, --symbol:\n	Add symbol to password.")
 		}
 		random, _ := MakeRandomStr(i, c.Bool("symbol"))
 		fmt.Println(random)
@@ -33,7 +38,8 @@ func main() {
 	}
 	err := app.Run(os.Args)
 	if err != nil {
-		log.Fatal(err)
+		log.SetFlags(0)
+		log.Fatal("\npswgen [OPTIONS] [PASSWORD LENGTH]\n\nOPTIONS:\n  -h, --help:\n	Show this help message and exit.\n  -v, --version:\n	Show version and exit.\n  -s, --symbol:\n	Add symbol to password.")
 	}
 }
 
