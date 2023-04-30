@@ -2,7 +2,10 @@ module github.com/ryone9re/pswgen
 
 go 1.17
 
-require github.com/urfave/cli v1.22.12
+require (
+	github.com/urfave/cli v1.22.12
+	github.com/urfave/cli/v2 v2.25.1
+)
 
 require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
